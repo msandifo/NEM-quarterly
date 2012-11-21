@@ -1,0 +1,15 @@
+ggplot2
+plyr
+aemo
+maptools
+lattice
+sp
+foreign
+knitr
+stats
+graphics
+grDevices
+utils
+datasets
+methods
+base

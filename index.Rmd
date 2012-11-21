@@ -1,0 +1,61 @@
+---
+title       : NEM quarterly trends
+subtitle    : updated november 2012
+author      : mike sandiford
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, bootstrap]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+---
+
+## Making it work
+
+load data using R package 'aemo'
+
+```{r echo=TRUE, cache=TRUE, message=FALSE,results='hide', message=FALSE }
+require(plyr, ggplot2, aemo)
+state="VIC"
+plots<-NEM_quarterly_trends(state=state)
+```
+---
+## `r print(state)` mean demand
+```{r  fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE,message=FALSE}
+plots$mean
+``` 
+---
+## `r print(state)` peak demand
+```{r   fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE}
+plots$max
+```
+---
+## `r print(state)` min demand
+```{r   fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE}
+plots$min
+```
+---
+## `r print(state)` mean to peak demand
+```{r   fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE}
+plots$m2p
+```
+---
+
+## `r print(state)` revenue
+```{r   fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE}
+plots$revenue
+```
+---
+
+## `r print(state)` volume weighted price
+```{r   fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE}
+plots$vwp
+```
+
+
+---
+
+## `r print(state)` standard deviation
+```{r   fig.height = 7, fig.width=12, fig.align = 'center', echo=FALSE}
+plots$sd
+```
